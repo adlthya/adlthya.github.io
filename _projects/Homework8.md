@@ -13,7 +13,7 @@ custom_js:
 
 # Visualization
 
-<vegachart schema-url="{{ site.baseurl }}/python_notebooks/chart.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/buildings_graph.json" style="width: 100%"></vegachart>
 
 
 ## Write-up
