@@ -22,12 +22,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Projects">
-  <meta property="og:description" content="I am definitely not a corgi!">
-  <meta property="og:image" content="https://source.unsplash.com/300x300/?corgi&derpy">
+  <meta property="og:title" content="Illinois Buildings Visualization">
+  <meta property="og:description" content="This visualization uses vega-lite to analyze buildings in Illinois.">
+  <meta property="og:image" content="assets/pngs/buildings.png">
 
-  <title>Projects</title>
-  <meta name="description" content="I am definitely not a corgi!">
+  <title>Illinois Buildings Visualization</title>
+  <meta name="description" content="This visualization uses vega-lite to analyze buildings in Illinois.">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -73,43 +73,35 @@
   </div>
 
 </nav>
-    <div class="card-columns m-3 mt-5">
+    <div class="col-lg-10 mx-auto mt-5 markdown-body">
+  <h1 id="visualization">Visualization</h1>
 
-  <!-- Local Projects -->
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/projects/1-vega-lite-project" class="project card text-themed"><img id="vega-lite-example-project-img" class="card-img-top" src="/assets/pngs/cars.png" alt="Vega Lite Example Project" /><div class="card-body">
-      <h5 id="vega-lite-example-project-name" class="card-title">Vega Lite Example Project
-      </h5>
-      <p id="vega-lite-example-project-desc" class="card-text">This is a "showcase" project that uses vega-lite for interactive viz!</p>
-      <p id="vega-lite-example-project-tools" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Python</span><span class="badge badge-pill text-primary border border-primary ml-1">HTML</span><span class="badge badge-pill text-primary border border-primary ml-1">vega-lite</span></p>
-    </div>
-  </a>
+<vegachart schema-url="/assets/json/buildings.json" style="width: 100%"></vegachart>
+
+<h2 id="write-up">Write-up</h2>
+
+<p>The scatter plot displays the square footage of buildings in five Illinois cities with the greatest total square footage (namely Chicago, Springfield, Carbondale, Urbana, and Champaign). 
+For this chart, I chose to represent the year of construction on the x-axis and the square footage on the y-axis. Each point represents a building. 
+I made several specific encoding choices. For one, I decided to restrict the domain of the x-axis from the year 1750 to 2020, as there are no buildings constructed before 1750. Furthermore, on the y-axis, I chose to use a logarithmic scale, as this would prevent data from clumping near the bottom right of the chart. In terms of color, the color of each data point corresponds to the city it is in. I decided to stick with the default colorway.</p>
+
+<p>The bar chart shows the count of buildings in each of the cities. I chose to encode the city name on the x-axis and the building count on the y-axis. The colors are the same as the scatter plot, with each color representing a specific city.</p>
+
+<p>In terms of interactivity, I wanted to find a way to link the two charts in a useful and intuitive manner. To accomplish this, I used the selection interval feature and added it as a parameter to the scatter plot. I then used the transform filter function to link the user’s selection of the scatter plot to the bar chart. The effect of this is that the user can see the count of buildings in each city based on the selected years and square footage. The interactivity enables the user to see, for instance, buildings that are greater than 100,000 sqft, or buildings built prior to the year 1850.</p>
+
+<div class="left">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/building_inventory.csv">
+  The Data
+</a>
 </div>
 
-  <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="/projects/homework8" class="project card text-themed"><img id="illinois-buildings-visualization-img" class="card-img-top" src="/assets/pngs/buildings.png" alt="Illinois Buildings Visualization" /><div class="card-body">
-      <h5 id="illinois-buildings-visualization-name" class="card-title">Illinois Buildings Visualization
-      </h5>
-      <p id="illinois-buildings-visualization-desc" class="card-text">This visualization uses vega-lite to analyze buildings in Illinois.</p>
-      <p id="illinois-buildings-visualization-tools" class="card-text"><span class="badge badge-pill text-primary border border-primary ml-1">Python</span><span class="badge badge-pill text-primary border border-primary ml-1">HTML</span><span class="badge badge-pill text-primary border border-primary ml-1">vega-lite</span></p>
-    </div>
-  </a>
-</div>
-
-  
-
-
-
-
-  <!-- Remote Projects -->
-  
-
-  
-
-  
+<div class="right">
+<a class="m-1 btn btn-outline-primary btn-2 " href="https://github.com/adlthya/adlthya.github.io/blob/main/python_notebooks/Workbook.ipynb">
+  The Analysis
+</a>
 </div>
 
 
+</div>
   </main>
   <footer class="mt-auto py-3 text-center">
 
@@ -152,6 +144,17 @@
 
 </footer>
 
+
+<!-- Custom page specific js files -->
+  
+    <script src='/assets/js/vega.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-lite.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/vega-embed.min.js' type="text/javascript"></script>
+  
+    <script src='/assets/js/justcharts.js' type="text/javascript"></script>
+  
 
 
 
